@@ -1,0 +1,76 @@
+ h1 {
+    margin-top: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+.title{
+    text-align: center;
+    font-size: 80px;
+    border: solid ; 
+    padding-top: 50px;
+    padding-bottom: 50px;
+    margin-top: 0px;
+    border-radius: 0px 0px 80px 80px;
+    background-color: #e85a4f;
+    border: none;
+}
+.search-box {
+    text-align: center;
+    margin-top: 20px; /* Ajustez selon l'espace que vous voulez entre le titre et la boîte de recherche */
+}
+
+.search-box input {
+    padding: 10px;
+    width: 300px;
+    border: 1px solid #e85a4f ;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.search-box button {
+    padding: 10px 20px;
+    background-color: #3498db;
+    border: none;
+    color: white;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-left: 10px; 
+}
+.description {
+    border: solid 2px #e85a4f; /
+    width: 30%; 
+    margin: 50px 0 50px 50px; 
+    padding: 30px; 
+    border-radius: 150PX;
+   background-color:#dce6f1;
+   text-align: center;
+  
+    font-family: 'Courier New', Courier, monospace;
+    float:left
+    
+}
+.descriptiontitle{
+  text-align:center
+}
+
+.contact{
+   border: solid 2px #e85a4f;
+   border-radius: 100px;
+   float: right;
+   width: 20%;
+   padding-top: 80px;
+   padding-bottom: 80px;
+   padding-right: auto;
+   padding-left: auto;
+   margin-top: 200px;
+   
+   
+   margin-right: 100px;
+   font-family: 'Courier New', Courier, monospace;
+   background-color:#dce6f1 ;
+   
+  
+   
+}
