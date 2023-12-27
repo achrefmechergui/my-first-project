@@ -1,20 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <h1 class="title">The Bookstore</h1>  
- <div class="search-box">
-    <input type="text" placeholder="search for your book">
-    <button>Rechercher</button>
-</div> 
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1 class="title">The Bookstore</h1>
+    <div class="search-box">
+      <input type="text" placeholder="search for your book" />
+      <button>Rechercher</button>
+    </div>
 
-<section class="right section">
-    <pre class="description">
+    <section class="right section">
+      <pre class="description">
         <h1 class="descriptiontitle">Description</h1>
 
   A bookstore is a place where you can discover
@@ -52,41 +52,43 @@
   </button>
 
     </pre>
-    <button class="btn">add</button>
-    <button class="btn">remove</button>
-    <div class="card card1">
-      <img src="/photos/images (1).jpg" alt="" style="width:100%">
-      <h1>Anna karenina</h1>
-      <p class="price">$19.99</p>
-      
-      <p><button>buy</button></p>
-    </div>
-    <div class="card ">
-      <img src="/photos/images2.jpg"  style="width:100%">
-      <h1>Don Quixote</h1>
-      <p class="price">$19.99</p>
-      
-      <p><button>buy</button></p>
-    </div>
-    <div class="card">
-      <img src="/photos/image3.jpg" style="width:100%">
-      <h1>Ulysses</h1>
-      <p class="price">$19.99</p>
-      
-      <p><button>buy</button></p>
-    </div>
-    <div class="card">
-      <img src="/photos/images4.jpg"  style="width:100%">
-      <h1>The Lord of the Rings</h1>
-      <p class="price">$19.99</p>
-      
-      <p><button>buy</button></p>
-    </div>
+      <div id="cardcontainer">
+        <div class="card card1">
+          <img src="/photos/images (1).jpg" alt="" style="width: 100%" />
+          <h1>Anna karenina</h1>
+          <p class="price">$19.99</p>
 
+          <p><button>buy</button></p>
+        </div>
+        <div class="card">
+          <img src="/photos/images2.jpg" style="width: 100%" />
+          <h1>Don Quixote</h1>
+          <p class="price">$19.99</p>
 
+          <p><button>buy</button></p>
+        </div>
+        <div class="card">
+          <img src="/photos/image3.jpg" style="width: 100%" />
+          <h1>Ulysses</h1>
+          <p class="price">$19.99</p>
+         
 
-</section>
+          <p><button>buy</button></p>
+        </div>
+        <div class="card">
+          <img src="/photos/images4.jpg" style="width: 100%" />
+          <h1>The Lord of the Rings</h1>
+          <p class="price">$19.99</p>
 
-</body>
+          <p><button>buy</button></p>
+        </div>
+     
+      </div>
+
+      <button id="btnadd">add</button>
+      <button id="btnremove">remove</button>
+      <button id="addsamples">add samples</button>
+    </section>
+    <script src="/item.js"></script>
+  </body>
 </html>
-    
