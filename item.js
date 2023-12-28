@@ -100,27 +100,72 @@ function bookstore() {
 
   return book;
 }
+// i use the oop function "bookstore" to add books using the my factory function "bookinformation" and to remove books using their id
+// in the parametre ....
 
+var newBook = `
+      <div class="card">
+        <img src="" style="width: 100%" />
+        <h1></h1>
+        <h3></h3>
+        <p class="price"></p>
+        <p class="price"></p>
+        <p><button>buy</button></p>
+      </div>`;
+// new book is a variable witch i puted an empty card bring it from w3school to put into it the information of the books
 
+/// i bring the element that i will use them and puted the in variables :
 
+const addBookButton = document.getElementById("btnadd"); //the add botton
+const bookNameInput = document.getElementById("book"); //the input of book name
+const bookPriceInput = document.getElementById("price"); //the input of book price
+const bookIdInput = document.getElementById("id"); // the input of the id
+const bookImageInput = document.getElementById("photo"); // the input of the photo
+const cardContainer = document.getElementById("cardcontainer"); // the div witch contains the books that i made it
 
+var myBookstore = bookstore(); // give my oop function an instance
 
-var divcardcontainer = document.getElementById("cardcontainer");
-var btnaddsumples = document.getElementById("addsamples");
-btnaddsumples.addEventListener("click", function () {
-  var newproduct = `
-     
-    <div id="samples" class="card">
-    <img src="" style="width: 100%" />
-    <h1>book title</h1>
-    <h3>${id()}</h3>
-    <p class="price">$19.99</p>
+//function to add new books :
+function addnewBook(event) {
+  event.preventDefault(); // i use preventDefault() to have a new function each time i add a book without actualisate the page
 
+  const name = bookNameInput.value; // name will contain the value witch i will write it in the input of name
+  const price = bookPriceInput.value; // price will contain the value witch i will write it in the input of price
+  const id = bookIdInput.value; // id will contain the value witch i will write it in the input of id
+  const image = bookImageInput.value; // image will contain the value witch i will write it in the input of image
+
+  // add a new book using the oop function :
+  myBookstore.add(name, price, image); // using the variable of the value of the inputs as a parametre in my oop function
+
+  // put the book in the doc html
+  const newBookElement = document.createElement("div"); // make new div to put my newcard book into it
+  newBookElement.classList.add("card"); // give him the same class that already used in my css doc
+  newBookElement.innerHTML = `
+    <img src="${image}" style="width: 100%" />
+    <h1>${name}</h1>
+    <p class="price">${price}</p>
+    <p class="price">${id}</p>
     <p><button>buy</button></p>
-  </div>`;
-  divcardcontainer.innerHTML += newproduct;
-});
-/// for adding a new sample when we click in the button addsumples we add the new product as a new element in the div bigcontainer
-/// using "+=" ,  and".innerhtml" to add..
-/// card sample using from w3schools
-// i use to the function generateid() from the last sprint with this syntax "${}" to get the value of the function .
+  `; // then i put my card in the div that i created using .innerhtml with putting the value of the inputs
+
+  cardContainer.appendChild(newBookElement);
+
+  // clear all the value with an empty string to have each time clear inputs
+  bookNameInput.value = "";
+  bookPriceInput.value = "";
+  bookIdInput.value = "";
+  bookImageInput.value = "";
+}
+
+// add an eventlistner to the button when i click into it the function that i made it will do the work
+addBookButton.addEventListener("click", addnewBook);
+
+const deleteBookButton = document.getElementById("btndelete");
+const deleteBookInput = document.getElementById("deletebook");
+
+function deleteBook() {
+  const bookIdToDelete = parseInt(deleteBookInput.value);
+
+  myBookstore.remove(bookIdToDelete);
+}
+deleteBookButton.addEventListener("click", deleteBook);
