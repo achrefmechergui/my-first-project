@@ -5,10 +5,21 @@ function generateID() {
   };
 }
 var id = generateID();
+
 function each(array, func) {
   for (var i = 0; i < array.length; i++) {
     func(array[i], i);
   }
+}
+
+function filter(array, predicate) {
+  var acc = [];
+  each(array, function (element, i) {
+    if (predicate(element, i)) {
+      acc.push(element);
+    }
+  });
+  return acc;
 }
 
 function bookinformation(name, price, img) {
@@ -29,25 +40,6 @@ function bookstore() {
     this.list.push(bookinformation(name, price, img));
   };
 
-  book.remove = function (id) {
-    var book = this;
-    each(this.list, function (element, i) {
-      if (element.id === id) {
-        book.list.splice(i, 1);
-      }
-    });
-    return this.list;
-  };
-
-  book.update = function (reference, value, id) {
-    each(this.list, function (element) {
-      if (element.id === id) {
-        element[reference] = value;
-      }
-    });
-    return this.list;
-  };
-
   book.search = function (id) {
     var arr = [];
     each(this.list, function (element) {
@@ -57,49 +49,24 @@ function bookstore() {
     });
     return arr;
   };
-
-  book.name = function (name) {
-    var foundName = null;
-    each(this.list, function (element) {
-      if (element.name === name) {
-        foundName = element.name;
-      }
+  book.remove = function (id) {
+    this.list = filter(this.list, function (book) {
+      return book.id !== id;
     });
-    return foundName;
   };
-
-  book.price = function (price) {
-    var foundPrice = null;
-    each(this.list, function (element) {
-      if (element.price === price) {
-        foundPrice = element.price;
-      }
-    });
-    return foundPrice;
-  };
-
-  book.id = function (id) {
-    var foundID = null;
-    each(this.list, function (element) {
-      if (element.id === id) {
-        foundID = element.id;
-      }
-    });
-    return foundID;
-  };
-
-  book.img = function (img) {
-    var foundImg = null;
-    each(this.list, function (element) {
-      if (element.img === img) {
-        foundImg = element.img;
-      }
-    });
-    return foundImg;
-  };
-
   return book;
 }
+
+book.search = function (id) {
+  var arr = [];
+  each(this.list, function (element) {
+    if (element.id === id) {
+      arr.push(element);
+    }
+  });
+  return arr;
+};
+
 // i use the oop function "bookstore" to add books using the my factory function "bookinformation" and to remove books using their id
 // in the parametre ....
 
@@ -139,7 +106,7 @@ function addnewBook(event) {
 
   // put the book in the doc html
   const newBookElement = document.createElement("div"); // make new div to put my newcard book into it
-  newBookElement.classList.add("card"); // give him the same class that already used in my css doc
+  newBookElement.classList.add("card"); // give him the same class that i already used in my css doc
   newBookElement.innerHTML = `
     <img src="${image}" style="width: 100%" />
     <h1>${name}</h1>
@@ -157,15 +124,16 @@ function addnewBook(event) {
   bookImageInput.value = "";
 }
 
-// add an eventlistner to the button when i click into it the function that i made it will do the work
+// add an eventlistner to the button  when i click into it the function that i made it will do the work
 addBookButton.addEventListener("click", addnewBook);
 
 const deleteBookButton = document.getElementById("btndelete");
 const deleteBookInput = document.getElementById("deletebook");
 
 function deleteBook() {
-  const bookIdToDelete = parseInt(deleteBookInput.value);
+  const bookIdToDelete = deleteBookInput.value;
 
   myBookstore.remove(bookIdToDelete);
 }
 deleteBookButton.addEventListener("click", deleteBook);
+
