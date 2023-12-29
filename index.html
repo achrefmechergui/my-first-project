@@ -3,55 +3,22 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>bookstore</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <h1 class="title">The Bookstore</h1>
-    <div class="search-box">
-      <input id="searchbookid" type="text" placeholder="search for your book" />
-      <button>Rechercher</button>
-    </div>
 
-    <section class="right section">
-      <pre class="description">
-        <h1 class="descriptiontitle">Description</h1>
-
-  A bookstore is a place where you can discover
-
-  and buy different kinds of books.
-
-  It's like a treasure trove filled with 
-
-  stories, information, and knowledge. 
-
-  Inside a bookstore, you'll find shelves lined
-
-  with books of various genres like :
-
-  adventure, mystery, romance, science, history,
-  
-  and many more.
-
-  It's a peaceful haven where people explore
-
-  different worlds through the pages of books
-   
-  
-  
-  <h1 class="contact">Contact us on :</h1>
-  <button class="facebook">
-    <a class="fcb" href="https://www.facebook.com/WeBookTN2021"
-      >FaCEBOOK</a
-    >
-  </button>
-  <button class="instagram">
-    <a class="inst" href="https://www.instagram.com/webook.tn/?hl=en"
-      >INSTAGRAM</a
-    >
-  </button>
-
-    </pre>
+    <nav id="nav" class="navbar">
+      <div class="container">
+        <a href="#" class="logo"><img class="logo" src="/photos/original-45a54e0571ae13ce154f565f49615607.png" alt="Logo"></a>
+        <ul class="nav-links">
+          <li><a href="#">Home</a></li>
+          <li><a id="mode" href="#">Mode</a></li>
+          <li><a id="homeadd" href="#">Add New book</a></li>
+        </ul>
+      </div>
+    </nav>
+    
 
       <form class="form" id="addBookForm" action="">
         <h3>add new book :</h3>
@@ -70,53 +37,62 @@
 
         <div>
           <label for="photo">put your photo :</label>
-          <input id="photo" type="file"  />
+          <input placeholder="Paste image URL here" id="photo" type="text"  />
+          
         </div>
 
         <button id="btnadd">Add book</button>
+        <button id="btnclose" >close</button>
       </form>
-      <form class="dform" action="">
-        <div>
-          <label for="deletebook">delete book here :</label>
-          <input
-            id="deletebook"
-            type="number"
-            placeholder="put an id of the book"
-          />
-          <button id="btndelete">delete a book</button>
-        </div>
-      </form>
-      <div id="cardcontainer">
+     
+      <div  class="parent" id="cardcontainer">
         <div class="card card1">
-          <img src="/photos/images (1).jpg" alt="" style="width: 100%" />
+          <img class="bookimage" src="/photos/images (1).jpg" alt="" style="width: 100%" />
           <h1>Anna karenina</h1>
-          <p class="price">$19.99</p>
+          <p class="price">$60</p>
 
-          <p><button>buy</button></p>
+          <p><button class="btnbuy">buy</button></p>
         </div>
         <div class="card">
-          <img src="/photos/images2.jpg" style="width: 100%" />
+          <img class="bookimage" src="/photos/images2.jpg" style="width: 100%" />
           <h1>Don Quixote</h1>
-          <p class="price">$19.99</p>
+          <p class="price">$70</p>
 
-          <p><button>buy</button></p>
+          <p><button class="btnbuy">buy</button></p>
         </div>
         <div class="card">
-          <img src="/photos/image3.jpg" style="width: 100%" />
+          <img class="bookimage" src="/photos/image3.jpg" style="width: 100%" />
           <h1>Ulysses</h1>
-          <p class="price">$19.99</p>
+          <p class="price">$80</p>
 
-          <p><button>buy</button></p>
+          <p><button class="btnbuy">buy</button></p>
         </div>
         <div class="card">
-          <img src="/photos/images4.jpg" style="width: 100%" />
+          <img class="bookimage" src="/photos/images4.jpg" style="width: 100%" />
           <h1>The Lord of the Rings</h1>
-          <p class="price">$19.99</p>
+          <p class="price">$100</p>
 
-          <p><button>buy</button></p>
+          <p><button class="btnbuy">buy</button></p>
         </div>
       </div>
     </section>
+    <div id="bigvisacontainer">
+      <div id="smallvisacontainer" class="visacontainer">
+        <label for="">please put your visa number :</label>
+        <input id="visainput" type="number">
+        <button id="btnconfirm">confirm</button>
+      </div  >
+      <div id="msg" class="visamsg">
+        <p> sorry you don't have money ha ha ha ha ...</p>
+      </div>
+
+
+    </div>
+    
+    <footer>
+     
+      <p class="design">Designed and developed by Achref mechergui © 2024</p>
+    </footer>
     <script src="/item.js"></script>
   </body>
 </html>

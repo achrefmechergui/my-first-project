@@ -1,4 +1,4 @@
-body {
+/* body {
   margin-top: 0px;
   margin-left: 0px;
   margin-right: 0px;
@@ -14,7 +14,7 @@ body {
   border-radius: 0px 0px 80px 80px;
   background-color: #e85a4f;
   border: none;
-}
+} */
 .search-box {
   text-align: center;
   margin-top: 20px; /* Ajustez selon l'espace que vous voulez entre le titre et la boîte de recherche */
@@ -38,23 +38,7 @@ body {
   cursor: pointer;
   margin-left: 10px;
 }
-.description {
-  border: solid 2px #e85a4f;
-  width: 50%;
-  margin-left: auto;
-  margin-right: auto;
 
-  padding: 30px;
-  border-radius: 150px;
-  background-color: #dce6f1;
-  text-align: center;
-
-  font-family: "Courier New", Courier, monospace;
-  padding-bottom: 10px;
-}
-.descriptiontitle {
-  text-align: center;
-}
 
 .book-cards {
   display: flex;
@@ -90,21 +74,16 @@ body {
   border: 2px solid #3b5998;
   border-radius: 8px;
   padding: 2px 8px;
-  
 }
 .instagram {
- 
   background-color: #c13584;
   border: 2px solid #3b5998;
   border-radius: 8px;
   padding: 2px 8px;
   margin-top: 40px;
- 
-
 }
 .inst {
   text-decoration: none;
- 
 }
 .fcb {
   text-decoration: none;
@@ -119,7 +98,6 @@ body {
   font-family: arial;
   display: inline-block;
   margin-right: 10px;
- 
 }
 
 .price {
@@ -142,43 +120,189 @@ body {
 .card button:hover {
   opacity: 0.7;
 }
-.card1{
-margin-left: 150px;
+.card1 {
+  margin-left: 150px;
 }
-.btn{
- margin-bottom: 100px;
+.btn {
+  margin-bottom: 100px;
 }
-.form{
-margin-left: auto;
-margin-right: 20px;
-  border: solid #e85a4f;
+.form {
+  margin-left: auto;
+  margin-right: auto;
   padding: 15px 15px;
   text-align: center;
   width: 30%;
-  background-color:  #dce6f1;
+  background-color: #dce6f1;
   border-radius: 20px;
-  
-
+  margin-top: 50px;
+  margin-bottom: 50px;
+  display: none;
+ 
 }
-#btnadd{
+#btnadd {
   font-size: 16px;
   margin-top: 20px;
-  background-color: #d87770;
+  background-color: #2ecc71;
 }
-.dform{
+.dform {
   margin-left: 20px;
-margin-right: auto;
+  margin-right: auto;
   border: solid #e85a4f;
   padding: 15px 15px;
   text-align: center;
   width: 30%;
-  background-color:  #dce6f1;
+  background-color: #dce6f1;
   border-radius: 20px;
-margin-bottom: 80px;
+  margin-bottom: 80px;
 }
-#btndelete{
+#btndelete {
   font-size: 16px;
   margin-top: 20px;
   background-color: #d87770;
+}
+.parent {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  grid-column-gap: 20px;
+  grid-row-gap: 20px;
+}
+.bookimage{
+  height: 400px;
+  width: 100px;
+}
 
+/* Remove default margin and padding from body and html */
+body, html {
+  margin: 0;
+  padding: 0;
+}
+
+/* Basic styling for the navigation bar */
+.navbar {
+  background-color: #2F4F4F;
+  color: white;
+  padding: 50px 0;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.logo img {
+  max-width: 100px; /* Adjust the logo's maximum width as needed */
+  height: auto;
+}
+
+.nav-links {
+  list-style-type: none;
+  display: flex;
+}
+
+.nav-links li {
+  margin-right: 20px;
+}
+
+.nav-links li:last-child {
+  margin-right: 0;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  
+}
+
+.nav-links a:hover {
+  text-decoration: underline;
+  color: #3498db;
+}
+
+.logo{
+  
+  border-radius: 50px;
+  width: 50%;
+}
+.design {
+  background-color: #3d4a59;
+  color: #fff;
+  padding: 30px;
+  text-align: center;
+
+  border-top-left-radius: 35px;
+  border-top-right-radius: 35px;
+  margin-bottom: 0;
+}
+.visacontainer{
+  display: inline none;
+}
+.visacontainer{
+  border-radius: 15px;
+  margin-top: 80px;
+
+  padding: 40px 10px;
+  margin-right: auto;
+  margin-left: auto;
+  width: 40%;
+  text-align: center;
+  font-size: 20px;
+ font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+ background-color: #627180;
+
+}
+#visainput{
+  padding: 10px;
+  border-radius: 20px;
+}
+#btnconfirm{
+  
+  border: none;
+
+ border-radius: 5px;
+  padding: 5px 5px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+
+  font-size: 18px;
+}
+#bigvisacontainer{
+  background-color: #3d5950;
+  position: fixed;
+  top: 0px;
+  bottom: 0px;
+  right: 0px;
+  left: 0px;
+  display: none;
+  
+}
+.visamsg{
+  border: solid;
+  width: 50%;
+  padding: 30px;
+  text-align: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 30px;
+  background-color: #627180;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 20px;
+  display: none;
+}
+#btnclose{
+  font-size: 16px;
+  margin-top: 20px;
+  background-color: #cccccc;
+}
+ 
+.newmode{
+  background-color:Ivory;
+}
+.newnavbar {
+  background-color:  Blue;
 }
