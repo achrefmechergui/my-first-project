@@ -5,19 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>bookstore</title>
     <link rel="stylesheet" href="style.css" />
+    <script src="/jquery-3.7.1.min.js"></script>
+
   </head>
   <body>
 
     <nav id="nav" class="navbar">
       <div class="container">
+      
+     
         <a href="#" class="logo"><img class="logo" src="/photos/original-45a54e0571ae13ce154f565f49615607.png" alt="Logo"></a>
+        
+       
         <ul class="nav-links">
+          
           <li><a href="#">Home</a></li>
           <li><a id="mode" href="#">Mode</a></li>
-          <li><a id="homeadd" href="#">Add New book</a></li>
+          <li><a id="homeadd" href="#">ADD new book</a></li>
         </ul>
       </div>
     </nav>
+    <input placeholder="put the id of the book" id="searchh" class="search" type="text">
+        <button id="searchbtn">search</button> 
+  
+    <h1 class="error"></h1>
     
 
       <form class="form" id="addBookForm" action="">
@@ -35,7 +46,7 @@
           <input placeholder="put the id here" id="id" type="number" />
         </div>
 
-        <div>
+        <div class="photodiv">
           <label for="photo">put your photo :</label>
           <input placeholder="Paste image URL here" id="photo" type="text"  />
           
@@ -50,6 +61,7 @@
           <img class="bookimage" src="/photos/images (1).jpg" alt="" style="width: 100%" />
           <h1>Anna karenina</h1>
           <p class="price">$60</p>
+          <h3 class="myid">1</h3>
 
           <p><button class="btnbuy">buy</button></p>
         </div>
@@ -57,21 +69,21 @@
           <img class="bookimage" src="/photos/images2.jpg" style="width: 100%" />
           <h1>Don Quixote</h1>
           <p class="price">$70</p>
-
+          <h3 class="myid">2</h3>
           <p><button class="btnbuy">buy</button></p>
         </div>
         <div class="card">
           <img class="bookimage" src="/photos/image3.jpg" style="width: 100%" />
           <h1>Ulysses</h1>
           <p class="price">$80</p>
-
+          <h3 class="myid">3</h3>
           <p><button class="btnbuy">buy</button></p>
         </div>
         <div class="card">
           <img class="bookimage" src="/photos/images4.jpg" style="width: 100%" />
           <h1>The Lord of the Rings</h1>
           <p class="price">$100</p>
-
+          <h3 class="myid">4</h3>
           <p><button class="btnbuy">buy</button></p>
         </div>
       </div>
