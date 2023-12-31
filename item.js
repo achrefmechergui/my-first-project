@@ -97,8 +97,8 @@ function makethenewcardswork() {
       bigvisacontainer.style.display = "block";
     });
   });
-} /// i make this function because when i add new book and click in the buy button of the new book that i add it nothing happen
-// so i make that function by make the new buy buttons in an array then an iteration  throw this buttons with our each function
+} /// i make this function because when i add new book and click in the buy button of the new book that i add it , nothing happens
+// so i create that function by making the new buy buttons into an array then it starts an iteration  throw this buttons with our each function
 // when i click on each button the displays of our two elements will toggle from "none" to "block"
 //then i invoke it in the add function to work with the new buttons
 
